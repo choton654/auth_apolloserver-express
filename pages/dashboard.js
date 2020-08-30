@@ -8,7 +8,7 @@ function dashboard() {
   } = useRouter();
 
   console.log(name);
-  return <div>welcome to dashboard {name} </div>;
+  return <h4>welcome to dashboard {name} </h4>;
 }
 
 export default requireAuth(dashboard);

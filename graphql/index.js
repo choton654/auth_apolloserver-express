@@ -70,6 +70,9 @@ const resolvers = {
       return user.save();
     },
     logIn: async (_, { data: { email, password } }, { req, res }) => {
+      if (!email || !password) {
+        throw new Error('You must provide an email and password.');
+      }
       const user = await User.findOne({ email });
 
       if (!user) {
